@@ -1,0 +1,40 @@
+/* to diplay each booking with white border in dark mode */
+body.dark-mode .booking1{
+    border:2px solid white;
+}
+/* to apply styles to cancel or review butttons */
+body.dark-mode .booking1 button{
+    background: radial-gradient(circle at top, #087670, #0c0c0c);
+}
+
+/* to apply styles to bookings */
+#myBookings {
+    width: 50%;
+    margin: 20px auto;
+}
+
+/*styles to each booking */
+.booking1 {
+    border: 2px solid #171616;
+    border-radius: 20px;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* styles to display each line in booking  */
+.booking1 p{
+    display:inline;
+    padding:15px;
+    margin-top:10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+/* to apply styles to cancel or review butttons */
+.booking1 button{
+    width:10%;
+    background: radial-gradient(circle at top, #32dcd3, #dedbdb);
+}
+/* to apply styles to cancel or review butttons on hovering */
+.booking1 button:hover{
+    background:white;
+}

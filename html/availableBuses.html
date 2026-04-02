@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Available Buses</title>
+    <link rel="icon" type="image/svg+xml" href="..\assets\images\logo.png">
+    <link rel="stylesheet" href="..\css\style.css">
+    <link rel="stylesheet" href="..\css\availableBuses.css">
+</head>
+<body>
+    <header>
+        <!-- title of app -->
+        <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bus-front" viewBox="0 0 16 16">
+            <path d="M5 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0m8 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-6-1a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zm1-6c-1.876 0-3.426.109-4.552.226A.5.5 0 0 0 3 4.723v3.554a.5.5 0 0 0 .448.497C4.574 8.891 6.124 9 8 9s3.426-.109 4.552-.226A.5.5 0 0 0 13 8.277V4.723a.5.5 0 0 0-.448-.497A44 44 0 0 0 8 4m0-1c-1.837 0-3.353.107-4.448.22a.5.5 0 1 1-.104-.994A44 44 0 0 1 8 2c1.876 0 3.426.109 4.552.226a.5.5 0 1 1-.104.994A43 43 0 0 0 8 3"/>
+            <path d="M15 8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1V2.64c0-1.188-.845-2.232-2.064-2.372A44 44 0 0 0 8 0C5.9 0 4.208.136 3.064.268 1.845.408 1 1.452 1 2.64V4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v3.5c0 .818.393 1.544 1 2v2a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V14h6v1.5a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-2c.607-.456 1-1.182 1-2zM8 1c2.056 0 3.71.134 4.822.261.676.078 1.178.66 1.178 1.379v8.86a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 11.5V2.64c0-.72.502-1.301 1.178-1.379A43 43 0 0 1 8 1"/>
+            </svg>    
+            RideEase<sub>An app that makes bus travel easy and convenient</sub>
+        </h1>
+        <!-- navbar of app -->
+        <nav>
+            <li><a href="..\html\home.html">Home</a></li>
+            <li><a href="..\html\availableBuses.html">Available Buses</a></li>
+            <li><a href="..\html\myBookings.html">My Bookings</a></li>
+            <li><a href="#" onclick="logout()">Logout</a></li>
+            <button onclick="toggleTheme()" id="themeBtn"><img src="../assets/icons/moon.ico" width="20" height="20"></button>
+        </nav>
+        <br>
+    </header>
+    <!-- all the content between header and footer  -->
+    <main>
+        <!-- search bus button for departure and destination  -->
+        <h3>Search Bus</h3>
+        <label for="fromCity">Departure station</label>
+        <input type="text" id="fromCity" onkeyup="search()">
+        <br><br><label for="toCity">Destination station</label>
+        <input type="text" id="toCity" onkeyup="search()">
+        <!-- list of available buses  -->
+        <h3>Available Buses and their timings</h3>
+        <div id="noBus"></div>
+        <table id="busTable">
+            <tr>
+                <th>Bus No</th>
+                <th>Bus Type</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure Time</th>
+                <th>AC Type</th>
+                <th>Fare</th>
+                <th>No of Seats</th>
+                <th>Reviews</th>
+                <th>Book</th>
+            </tr>
+            <tr>
+                <td>AP02AB0001</td>
+                <td>Seater</td>
+                <td>Chennai</td>
+                <td>Vijayawada</td>
+                <td>06:15:00</td>
+                <td>Non AC</td>
+                <td>1000</td>
+                <td>30</td>
+                <td><button onclick="showReview('AP02AB0001')"></button></td>
+                <td><button onclick="bookBus('AP02AB0001')"></button></td>
+            </tr>
+            <tr>
+                <td>AP04AB0033</td>
+                <td>Sleeper</td>
+                <td>Bangalore</td>
+                <td>Hyderabad</td>
+                <td>14:15:00</td>
+                <td>AC</td>
+                <td>1500</td>
+                <td>20</td>
+                <td><button onclick="showReview('AP04AB0033')"></button></td>
+                <td><button onclick="bookBus('AP04AB0033')"></button></td>
+            </tr>
+            <tr>
+                <td>AP06AB0005</td>
+                <td>Sleeper</td>
+                <td>Visakhapatnam</td>
+                <td>Chennai</td>
+                <td>07:15:00</td>
+                <td>AC</td>
+                <td>1800</td>
+                <td>20</td>
+                <td><button onclick="showReview('AP06AB0005')"></button></td>
+                <td><button onclick="bookBus('AP06AB0005')"></button></td>
+            </tr>
+            <tr>
+                <td>AP08AB0037</td>
+                <td>Sleeper</td>
+                <td>Tirupati</td>
+                <td>Mysore</td>
+                <td>15:15:00</td>
+                <td>AC</td>
+                <td>1400</td>
+                <td>20</td>
+                <td><button onclick="showReview('AP08AB0037')"></button></td>
+                <td><button onclick="bookBus('AP08AB0037')"></button></td>
+            </tr>
+            <tr>
+                <td>AP10AB0009</td>
+                <td>Sleeper</td>
+                <td>Rajahmundry</td>
+                <td>Bangalore</td>
+                <td>08:15:00</td>
+                <td>AC</td>
+                <td>2250</td>
+                <td>20</td>
+                <td><button onclick="showReview('AP10AB0009')"></button></td>
+                <td><button onclick="bookBus('AP10AB0009')"></button></td>
+            </tr>
+            <tr>
+                <td>AP12AB0012</td>
+                <td>Seater</td>
+                <td>Hyderabad</td>
+                <td>Nellore</td>
+                <td>09:30:00</td>
+                <td>Non AC</td>
+                <td>900</td>
+                <td>30</td>
+                <td><button onclick="showReview('AP12AB0012')"></button></td>
+                <td><button onclick="bookBus('AP12AB0012')"></button></td>
+            </tr>
+            <tr>
+                <td>AP14AB0021</td>
+                <td>Seater</td>
+                <td>Chennai</td>
+                <td>Visakhapatnam</td>
+                <td>11:00:00</td>
+                <td>AC</td>
+                <td>850</td>
+                <td>30</td>
+                <td><button onclick="showReview('AP14AB0021')"></button></td>
+                <td><button onclick="bookBus('AP14AB0021')"></button></td>
+            </tr>
+            <tr>
+                <td>AP20AB0078</td>
+                <td>Sleeper</td>
+                <td>Coimbatore</td>
+                <td>Rajahmundry</td>
+                <td>05:45:00</td>
+                <td>AC</td>
+                <td>2000</td>
+                <td>20</td>
+                <td><button onclick="showReview('AP20AB0078')"></button></td>
+                <td><button onclick="bookBus('AP20AB0078')"></button></td>
+            </tr>
+            <tr>
+                <td>AP22AB0091</td>
+                <td>Seater</td>
+                <td>Bangalore</td>
+                <td>Chennai</td>
+                <td>13:20:00</td>
+                <td>AC</td>
+                <td>750</td>
+                <td>30</td>
+                <td><button onclick="showReview('AP22AB0091')"></button></td>
+                <td><button onclick="bookBus('AP22AB0091')"></button></td>
+            </tr>
+            <tr>
+                <td>AP24AB0103</td>
+                <td>Sleeper</td>
+                <td>Hyderabad</td>
+                <td>Mysore</td>
+                <td>22:15:00</td>
+                <td>AC</td>
+                <td>1380</td>
+                <td>20</td>
+                <td><button onclick="showReview('AP24AB0103')"></button></td>
+                <td><button onclick="bookBus('AP24AB0103')"></button></td>
+            </tr>
+            <tr>
+                <td>AP26AB0114</td>
+                <td>Sleeper</td>
+                <td>Vijayawada</td>
+                <td>Coimbatore</td>
+                <td>16:40:00</td>
+                <td>AC</td>
+                <td>2500</td>
+                <td>20</td>
+                <td><button onclick="showReview('AP26AB0114')"></button></td>
+                <td><button onclick="bookBus('AP26AB0114')"></button></td>
+            </tr>
+        </table><br>
+    </main>
+    <div id="toast"></div>
+    <footer>
+        <p>© 2026 RideEase Bus Booking App<br>
+        Contact: support@rideease.com</p>
+    </footer>
+    <!--all js files-->
+    <script src="..\js\theme.js"></script>
+    <script src="..\js\authorization.js"></script>
+    <script src="..\js\availableBuses.js"></script>
+</body>
+</html>

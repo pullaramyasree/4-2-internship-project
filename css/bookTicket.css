@@ -1,0 +1,23 @@
+/* styles to display booked ticket */
+#ticket{
+    width:350px;
+    margin:30px auto;
+    padding:20px;
+    font-family:Arial;
+}
+/* styles to display print option */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #ticket, #ticket * {
+        visibility: visible;
+    }
+    #ticket {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80%;
+        margin:auto;
+    }
+}

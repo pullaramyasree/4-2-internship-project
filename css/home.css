@@ -1,0 +1,56 @@
+/* styles for about,features,its container in dark mode */
+body.dark-mode .about,
+body.dark-mode .feature-box,
+body.dark-mode .feature-container {
+    background: #3f3e3e;
+    color: white;
+    border-color: #e6d7d7;
+}
+/* styles for each feature box in dark mode */
+body.dark-mode .feature-box{
+    background: radial-gradient(circle at top, #087670, #0c0c0c);
+}
+
+
+/* styles for about,features,its container in light mode */
+.container,.features,.about{
+    background-color: #f2f7ff;
+    border-radius: 5px;
+    padding:20px;
+    margin:auto;
+}
+/* to disply features and about side by side */
+.content{
+    display:flex;
+    width:95%;
+}
+/* to hold all features in a single container */
+.feature-container{
+    border:2px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 50px;
+    margin-right: 20px;
+    width:20%;
+    font-size:medium ;
+}
+/* styles to each feature */
+.feature-box{
+    padding: 10px;
+    background: radial-gradient(circle at top, #32dcd3, #dedbdb);
+    border:2px solid rgb(49, 47, 47);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    margin:10px 10px 10px 10px;
+}
+/* styles to display content about app */
+.about{
+    width:76%;
+    font-size: 20px;
+    text-align: justify;
+    border:2px solid black;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}

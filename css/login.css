@@ -1,0 +1,8 @@
+/* to display register link in white color in dark mode */
+body.dark-mode .register{
+    color:white;
+}
+/* to display register link in black color in light mode */
+.register{
+    color:black;
+}

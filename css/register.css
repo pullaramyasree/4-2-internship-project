@@ -1,0 +1,15 @@
+/* to display login link in white color in dark mode  */
+body.dark-mode .alreadyHaveAccount{
+    color:white;
+}
+/* to display login link in black color in light mode  */
+.alreadyHaveAccount{
+    color: black;
+}
+/* styles to radio button ie gender  */
+#radioButton{
+    margin-left: 50px;
+}
+#radioButton label,#radioButton input{
+    display: flex;
+}

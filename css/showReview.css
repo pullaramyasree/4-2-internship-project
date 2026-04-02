@@ -1,0 +1,22 @@
+/* to display each review with white border in dark mode  */
+body.dark-mode .review{
+    border:2px solid white;
+}
+
+/*each review styles*/
+.review {
+    border: 2px solid #151313;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 8px;
+}
+/*entire reviews list style */
+#reviewList{
+    width:60%;
+    margin:auto;
+}
+/* to align comment in each review correctly  */
+#reviewList p{
+    text-align:justify ;
+}
